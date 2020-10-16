@@ -20,7 +20,7 @@ pipeline{
   }
   stage('Publish'{
    steps{
-     step ($class: 'Publisher' , reportFilenamePattern: **testng-results.xml, 
+     step ($class: 'Publisher' , reportFilenamePattern: '**testng-results.xml', 
 	 escapeExceptionmsg: true, escapeTestDescription: true, failureOnTestConfig: false, showFailedBuilds: false, thresholdMode: 2, unstableSkips: 100, failedSkips: 100, unstableFails: 0, failedFails: 100])
 	  stage('Post') {
             steps {
